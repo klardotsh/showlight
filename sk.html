@@ -1,0 +1,80 @@
+<!doctype html>
+<head>
+	<title>Showlight</title>
+	<link rel="stylesheet" href="main.css"/>
+	<script defer type="text/javascript" src="frontend.js"></script>
+</head>
+
+<body>
+	<div id="lights" class="flexy">
+		<header id="notices" class="flex force-caps">
+			Showlight v0.1 (<span id="role">SK</span>) -
+			<span id="connection-none">Not Connected</span>
+			<span id="connection-made" hidden>Connected</span>
+			<button id="connection-nuke">NUKE</button>
+		</header>
+
+		<div id="light-noaddr" class="flex light-state force-caps">
+			<div class="light-state-contents">
+				<p>No Showlight Controller Address Provided</p>
+				<form id="light-ctrl-api">
+					<input id="ctrl-addr" name="ctrl-addr" type="text"/>
+					<button id="light-ctrl-api-submit" type="submit">Beam Me Up, Scotty</button>
+				</form>
+
+				<p id="light-ctrl-api-failed" hidden>Could not establish connection to requested server, try again.</p>
+				<p id="light-ctrl-api-failed-reason" hidden></p>
+			</div>
+		</div>
+
+		<div id="light-connected" class="flex light-state force-caps" hidden>
+			<p class="light-state-contents">Connected, no current instructions</p>
+		</div>
+
+		<div id="light-show-potential-card" class="flex light-state force-caps" hidden>
+			<p class="light-state-contents">Long Ref Huddle / Card</p>
+		</div>
+
+		<div id="light-show-scores-ready" class="flex light-state force-caps" hidden>
+			<p class="light-state-contents">Scores are ready - post ASAP</p>
+		</div>
+
+		<div id="light-show-go" class="flex light-state force-caps" hidden>
+			<p class="light-state-contents">Clear for show</p>
+		</div>
+
+		<div id="light-show-stretch" class="flex light-state force-caps" hidden>
+			<p class="light-state-contents">Stretch for up to <span id="stretch-seconds">00</span> seconds</p>
+		</div>
+
+		<div id="light-show-wind-down" class="flex light-state force-caps" hidden>
+			<p class="light-state-contents">Wind down - <span id="wind-down-seconds">00<span> seconds remaining</p>
+		</div>
+
+		<div id="light-show-halt" class="flex light-state force-caps" hidden>
+			<!-- This is an x86 instruction set joke... -->
+			<p class="light-state-contents">Halt And Catch Fire</p>
+		</div>
+
+		<div id="light-show-scores-btn" class="flex light-state force-caps">
+			<button id="light-show-scores-btn-inner" class="light-state-contents">SK Scores Ready</button>
+		</div>
+
+		<div id="light-show-card-btn" class="flex light-state force-caps">
+			<button id="light-show-card-btn-inner" class="light-state-contents">HR Potential Card</button>
+		</div>
+
+		<div id="light-show-go-btn" class="flex light-state force-caps">
+			<button id="light-show-go-btn-inner" class="light-state-contents">Show Go</button>
+		</div>
+
+		<div id="light-show-halt-btn" class="flex light-state force-caps">
+			<button id="light-show-halt-btn-inner" class="light-state-contents">FTA Request Rush</button>
+		</div>
+
+		<div id="light-sk-clear-btn" class="flex light-state force-caps">
+			<button id="light-sk-clear-btn-inner" class="light-state-contents">Clear Lights</button>
+		</div>
+
+	</div>
+</body>
